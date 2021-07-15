@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "variables";
+
+/***************************** MIXINS STYLE ****************************/
+
+@mixin mask-image($url) {
+  mask-image: url($url);
+  -webkit-mask-image: url($url);
+}
+
+
+/***************************** ICONS STYLE ****************************/
+
+.icon {
+  width: 25px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: sub;
+  background-color: #7D7D7D;
+  mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+
+  -webkit-mask: {
+    repeat: no-repeat;
+    size: 100%;
+    position: center;
+  }
+
+  &.icon-about {
+    @include mask-image("../assets/icons/people.png");
+  }
+
+  &.icon-silver {
+    background-color: $color-icons;
+  }
+
+  &.icon-white {
+    background-color: white;
+  }
+
+  &.icon-blue {
+    background-color: #48CCD4;
+  }
+
+  &.icon-sm {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+//************************************ MAIN STYLE ************************************
+
+body {
+  color: $baseColorGray300;
+  font-size: $defaultFontSize;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
